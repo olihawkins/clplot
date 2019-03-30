@@ -57,7 +57,12 @@ theme_commonslib_green <- function (subtitle = TRUE, axes = "b", grid = "h") {
             plot.caption = ggplot2::element_text(
                 color = "#303030",
                 hjust = 1,
-                size = 10),
+                size = 10,
+                margin = ggplot2::margin(
+                    t = 10,
+                    r = 0,
+                    b = 0,
+                    l = 0, unit = "pt")),
             panel.border = ggplot2::element_blank(),
             panel.background = ggplot2::element_blank(),
             panel.grid.major = ggplot2::element_blank(),
@@ -126,6 +131,7 @@ theme_commonslib_green <- function (subtitle = TRUE, axes = "b", grid = "h") {
                 fill = "#edf7f2"),
             legend.title = ggplot2::element_text(
                 color = "#303030",
+                face = "bold",
                 size = 10),
             legend.text = ggplot2::element_text(
                 color = "#303030",

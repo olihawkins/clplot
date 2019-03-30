@@ -186,7 +186,7 @@ example_line_stocks <- function() {
             ggplot2::aes(date, value, color = stock)) +
         ggplot2::geom_line() +
         ggplot2::labs(
-            x = "",
+            x = NULL,
             y = "Price index",
             title = "Amazon has done pretty well lately",
             subtitle = "Change in the value of tech stocks during the last decade (baseline = 100)",
