@@ -11,5 +11,4 @@ commonslib_green_colors <- c(
     "blue"    = "#4472c4",
     "lilac"   = "#a474c7",
     "purple"  = "#633684",
-    "orange"  = "#d25f15"
-)
+    "orange"  = "#d25f15")
