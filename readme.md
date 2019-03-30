@@ -1,6 +1,10 @@
 # clplot
 
-clplot is a ggplot2 theme for the House of Commons Library. It is currently in development so theme elements and scale colours are likely to change in future.
+clplot is a ggplot2 theme for the House of Commons Library. It is currently in development so theme elements and scale colors are likely to change in future.
+
+## Fonts
+
+This theme requires Open Sans as the theme font.
 
 ## Installation
 
@@ -38,7 +42,7 @@ Sets the theme with the following arguments:
 
 ## Scale
 
-Use `+ scale_color_commonslib_green()` or `+ scale_fill_commonslib_green()` as approriate. Both functions have the same signature.
+Use `scale_color_commonslib_green()` or `scale_fill_commonslib_green()` as approriate. Both functions have the same signature.
 
 ---
 
@@ -50,11 +54,27 @@ Sets the scales with the following arguments:
 * __palette__ The name of a palette. Valid names are:
     * _main_ - greens, blues, purples
     * _green_ - just greens
-    * _monotone_ - a single mid-dark green
     * _twotone_ - two contrasting greens
-    * _highlight_ - same as _main_ but with an orange for highlighting
 * __discrete__ Boolean to indicate if color aesthetic is discrete.
 * __reverse__ Boolean to indicate whether palette should be reversed.
 * __...__ Additional arguments passed to `discrete_scale` or `scale_color_gradientn`, depending on the value of `discrete`.
+
+---
+
+## Colors
+
+The base colors that are used by the theme are available in a named vector
+called `commonslib_green_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
+
+The base color names are:
+
+* __green_1__
+* __green_2__
+* __green_3__
+* __green_4__
+* __blue__
+* __lilac__
+* __purple__
+* __orange__
 
 ---

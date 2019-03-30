@@ -1,13 +1,12 @@
 ### Scales
 
-# Functions -------------------------------------------------------------------
-
 #' Function to extract commonslib_green colors as hex codes
 #'
 #' @param ... Names of colors in \code{commonslib_green_colors}.
 #' @export
 
 get_commonslib_green_colors <- function(...) {
+
     colors <- c(...)
     if (is.null(colors))
         return (commonslib_green_colors)
@@ -24,6 +23,25 @@ get_commonslib_green_colors <- function(...) {
 get_commonslib_green_palette <- function(
     palette = "main",
     reverse = FALSE, ...) {
+
+    commonslib_green_palettes <- list(
+        main  = get_commonslib_green_colors(
+            "green_1",
+            "green_2",
+            "green_3",
+            "green_4",
+            "blue",
+            "lilac",
+            "purple"),
+        green = get_commonslib_green_colors(
+            "green_1",
+            "green_2",
+            "green_3",
+            "green_4"),
+        twotone = get_commonslib_green_colors(
+            "green_2",
+            "green_3")
+    )
 
     p <- commonslib_green_palettes[[palette]]
     if (reverse) p <- rev(p)
@@ -77,25 +95,3 @@ scale_fill_commonslib_green <- function(
         ggplot2::scale_fill_gradientn(colors = p(256), ...)
     }
 }
-
-# Values ----------------------------------------------------------------------
-
-commonslib_green_colors <- c(
-    green1 = "#1b432e",
-    green2 = "#36845b",
-    green3 = "#60bd8c",
-    green4 = "#a3dabd",
-    blue   = "#4472c4",
-    lilac  = "#a474c7",
-    purple = "#633684",
-    orange = "#d25f15")
-
-commonslib_green_palettes <- list(
-    main  = get_commonslib_green_colors(
-        "green1", "green2", "green3", "green4", "blue", "lilac", "purple"),
-    green = get_commonslib_green_colors(
-        "green1", "green2", "green3", "green4"),
-    monotone  = get_commonslib_green_colors("green2"),
-    twotone = get_commonslib_green_colors("green2", "green3"),
-    highlight = get_commonslib_green_colors()
-)

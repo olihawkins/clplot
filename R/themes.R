@@ -1,6 +1,6 @@
 ### Themes
 
-#' Base Commons Library green theme
+#' Commons Library Green theme
 #'
 #' @param subtitle Boolean to indicate whether the plot has a subtitle. This
 #'   argument controls the spacing after the title, so that it is smaller when

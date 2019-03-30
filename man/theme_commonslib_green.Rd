@@ -2,7 +2,7 @@
 % Please edit documentation in R/themes.R
 \name{theme_commonslib_green}
 \alias{theme_commonslib_green}
-\title{Base Commons Library green theme}
+\title{Commons Library Green theme}
 \usage{
 theme_commonslib_green(subtitle = TRUE, axes = "b", grid = "h")
 }
@@ -25,5 +25,5 @@ which gridlines to show by including a particular character in the string:
 only the horizontal gridlines are shown by default.}
 }
 \description{
-Base Commons Library green theme
+Commons Library Green theme
 }
