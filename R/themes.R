@@ -132,6 +132,7 @@ theme_commonslib <- function (
                     r = 0,
                     l = 3, unit = "pt")),
             legend.background = ggplot2::element_rect(
+                color = NA,
                 fill = background,
                 size = 0),
             legend.key = ggplot2::element_rect(

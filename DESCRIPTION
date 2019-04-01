@@ -1,7 +1,7 @@
 Package: clplot
 Type: Package
 Title: Plotting tools for the House of Commons Library
-Version: 0.1.4
+Version: 0.1.6
 Author: Oliver Hawkins
 Maintainer: Oliver Hawkins <oli@olihawkins.com>
 Description: The clplot package provides themes and tools for making plots in 
