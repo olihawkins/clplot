@@ -23,17 +23,19 @@ Set the theme for the session with:
 library(ggplot2)
 library(clplot)
 
-theme_set(theme_commonslib_green())
+theme_set(theme_commonslib())
 ```
 
-Or apply the theme directly to a specific plot with `+ theme_commonslib_green()`.
+Or apply the theme directly to a specific plot with `+ theme_commonslib()`.
 
 ---
 
-_clplot_::__theme_commonslib_green__(_subtitle = TRUE_, _axes = "b"_, _grid = "h"_)
+_clplot_::__theme_commonslib__(_subtitle = TRUE_, _axes = "b"_, _grid = "h"_)
 
 Sets the theme with the following arguments:
 
+* __background__  A hexidecimal color code for the canvas color. The default is "#edf7f2".
+* __family__ The font family name to use for the chart as a string. The default is "Open Sans".
 * __subtitle__ Boolean to indicate whether the plot has a subtitle. This argument controls the spacing after the title, so that it is smaller when a subtitle is present. The default is TRUE.
 * __axes__ A string to indicate which axes should have axis lines and ticks. Designate the axes to show by including a particular character in the string: "t" for top, "r" for right, "b" for bottom, "l" for left. You will need to position the axes correctly with ggplot, and turn on any secondary axes, in order for the specified axes lines and ticks to be displayed. The default is "bl", meaning both axes are shown by default.
 * __grid__ A string to indicate which gridlines should be shown. Designate which gridlines to show by including a particular character in the string: "h" for horizontal, "v" for vertical. The default is an empty string, meaning no gridlines are shown by default.
@@ -42,12 +44,12 @@ Sets the theme with the following arguments:
 
 ## Scale
 
-Use `scale_color_commonslib_green()` or `scale_fill_commonslib_green()` as approriate. Both functions have the same signature.
+Use `scale_color_commonslib()` or `scale_fill_commonslib()` as approriate. Both functions have the same signature.
 
 ---
 
-_clplot_::__scale_color_commonslib_green__(_palette = "main"_, _discrete = TRUE_, _reverse = FALSE_, _..._)
-_clplot_::__scale_fill_commonslib_green__(_palette = "main"_, _discrete = TRUE_, _reverse = FALSE_, _..._)
+_clplot_::__scale_color_commonslib__(_palette = "main"_, _discrete = TRUE_, _reverse = FALSE_, _..._)
+_clplot_::__scale_fill_commonslib__(_palette = "main"_, _discrete = TRUE_, _reverse = FALSE_, _..._)
 
 Sets the scales with the following arguments:
 
@@ -64,7 +66,7 @@ Sets the scales with the following arguments:
 ## Colors
 
 The base colors that are used by the theme are available in a named vector
-called `commonslib_green_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
+called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
 
 The base color names are:
 
