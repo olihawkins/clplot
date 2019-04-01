@@ -1,7 +1,10 @@
 ### Themes
 
-#' Commons Library Green theme
-#'
+#' Commons Library theme
+#' @param background A hexidecimal color code for the canvas color. The default
+#'   is "#edf7f2".
+#' @param family The font family name to use for the chart as a string. The
+#'   default is "Open Sans".
 #' @param subtitle Boolean to indicate whether the plot has a subtitle. This
 #'   argument controls the spacing after the title, so that it is smaller when
 #'   a subtitle is present. The default is TRUE.
@@ -18,16 +21,21 @@
 #'   no gridlines are shown by default.
 #' @export
 
-theme_commonslib_green <- function (subtitle = TRUE, axes = "bl", grid = "") {
+theme_commonslib <- function (
+    background = "#edf7f2",
+    family = "Open Sans",
+    subtitle = TRUE,
+    axes = "bl",
+    grid = "") {
 
     # Baseline theme
 
-    theme_commonslib_green <- ggthemes::theme_foundation(
+    theme_commonslib <- ggthemes::theme_foundation(
         base_size = 10,
-        base_family = "Open Sans") %+replace%
+        base_family = family) %+replace%
         ggplot2::theme(
             plot.background = ggplot2::element_rect(
-                fill = "#edf7f2",
+                fill = background,
                 size = 0),
             plot.margin = ggplot2::margin(
                 t = 20,
@@ -124,11 +132,11 @@ theme_commonslib_green <- function (subtitle = TRUE, axes = "bl", grid = "") {
                     r = 0,
                     l = 3, unit = "pt")),
             legend.background = ggplot2::element_rect(
-                fill = "#edf7f2",
+                fill = background,
                 size = 0),
             legend.key = ggplot2::element_rect(
-                color = "#edf7f2",
-                fill = "#edf7f2"),
+                color = background,
+                fill = background),
             legend.title = ggplot2::element_text(
                 color = "#303030",
                 face = "bold",
@@ -141,7 +149,7 @@ theme_commonslib_green <- function (subtitle = TRUE, axes = "bl", grid = "") {
     # Subtitle
 
     if (! subtitle) {
-        theme_commonslib_green <- theme_commonslib_green + ggplot2::theme(
+        theme_commonslib <- theme_commonslib + ggplot2::theme(
             plot.title = ggplot2::element_text(
                 margin = ggplot2::margin(b = 20, unit = "pt")))
     }
@@ -151,28 +159,28 @@ theme_commonslib_green <- function (subtitle = TRUE, axes = "bl", grid = "") {
     axis_line <- ggplot2::element_line(color = "#303030", size = 0.3)
 
     if (stringr::str_detect(axes, "t")) {
-        theme_commonslib_green <- theme_commonslib_green %+replace%
+        theme_commonslib <- theme_commonslib %+replace%
             ggplot2::theme(
                 axis.line.x.top = axis_line,
                 axis.ticks.x.top = axis_line)
     }
 
     if (stringr::str_detect(axes, "r")) {
-        theme_commonslib_green <- theme_commonslib_green %+replace%
+        theme_commonslib <- theme_commonslib %+replace%
             ggplot2::theme(
                 axis.line.y.right = axis_line,
                 axis.ticks.y.right = axis_line)
     }
 
     if (stringr::str_detect(axes, "b")) {
-        theme_commonslib_green <- theme_commonslib_green %+replace%
+        theme_commonslib <- theme_commonslib %+replace%
             ggplot2::theme(
                 axis.line.x.bottom = axis_line,
                 axis.ticks.x.bottom = axis_line)
     }
 
     if (stringr::str_detect(axes, "l")) {
-        theme_commonslib_green <- theme_commonslib_green %+replace%
+        theme_commonslib <- theme_commonslib %+replace%
             ggplot2::theme(
                 axis.line.y.left = axis_line,
                 axis.ticks.y.left = axis_line)
@@ -183,14 +191,14 @@ theme_commonslib_green <- function (subtitle = TRUE, axes = "bl", grid = "") {
     grid_line <- ggplot2::element_line(color = "#c0c0c0",size = 0.2)
 
     if (stringr::str_detect(grid, "v")) {
-        theme_commonslib_green <- theme_commonslib_green %+replace%
+        theme_commonslib <- theme_commonslib %+replace%
             ggplot2::theme(panel.grid.major.x = grid_line)
     }
 
     if (stringr::str_detect(grid, "h")) {
-        theme_commonslib_green <- theme_commonslib_green %+replace%
+        theme_commonslib <- theme_commonslib %+replace%
             ggplot2::theme(panel.grid.major.y = grid_line)
     }
 
-    theme_commonslib_green
+    theme_commonslib
 }

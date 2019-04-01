@@ -1,9 +1,9 @@
 ### Colors
 
-#' Commons Library Green colors
+#' Commons Library colors
 #' @export
 
-commonslib_green_colors <- c(
+commonslib_colors <- c(
     "green_1" = "#1b432e",
     "green_2" = "#36845b",
     "green_3" = "#60bd8c",

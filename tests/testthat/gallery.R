@@ -96,8 +96,8 @@ example_scatter_mpg <- function() {
         ggplot2::xlim(0, 8) +
         ggplot2::ylim(10, 50) +
         ggplot2::coord_cartesian(expand = FALSE) +
-        theme_commonslib_green(grid = "hv") +
-        scale_color_commonslib_green()
+        theme_commonslib(grid = "hv") +
+        scale_color_commonslib()
 }
 
 example_scatter_cons_type <- function() {
@@ -125,8 +125,8 @@ example_scatter_cons_type <- function() {
             limits = c(0.5, 0.8),
             label = scales::percent_format(accuracy = 1)) +
         ggplot2::coord_cartesian(expand = FALSE) +
-        theme_commonslib_green(grid = "hv") +
-        scale_color_commonslib_green()
+        theme_commonslib(grid = "hv") +
+        scale_color_commonslib()
 }
 
 example_bar_cons_type <- function() {
@@ -148,8 +148,8 @@ example_bar_cons_type <- function() {
         ggplot2::scale_x_discrete(
             expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
-        theme_commonslib_green(axes = "b", grid = "h") +
-        scale_fill_commonslib_green(palette = "green", guide = "none")
+        theme_commonslib(axes = "b", grid = "h") +
+        scale_fill_commonslib(palette = "green", guide = "none")
 }
 
 example_bar_cons_region <- function() {
@@ -167,10 +167,10 @@ example_bar_cons_region <- function() {
             subtitle = "Constituencies by country or region, United Kingdom",
             caption = "@commonslib") +
         ggplot2::scale_x_discrete(
-            expand =ggplot2::expand_scale(add = c(0.5, 0.5))) +
+            expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
-        theme_commonslib_green(axes = "b", grid = "h") +
-        scale_fill_commonslib_green(guide = "none")
+        theme_commonslib(axes = "b", grid = "h") +
+        scale_fill_commonslib(guide = "none")
 }
 
 example_line_stocks <- function() {
@@ -196,6 +196,6 @@ example_line_stocks <- function() {
             label = scales::comma,
             limits = c(0, 2700)) +
         ggplot2::coord_cartesian(expand = FALSE) +
-        theme_commonslib_green(axes = "b", grid = "h") +
-        scale_color_commonslib_green()
+        theme_commonslib(axes = "b", grid = "h") +
+        scale_color_commonslib()
 }

@@ -1,31 +1,31 @@
 ### Scales
 
-#' Function to extract commonslib_green colors as hex codes
+#' Function to extract commonslib colors as hex codes
 #'
-#' @param ... Names of colors in \code{commonslib_green_colors}.
+#' @param ... Names of colors in \code{commonslib_colors}.
 #' @export
 
-get_commonslib_green_colors <- function(...) {
+get_commonslib_colors <- function(...) {
 
     colors <- c(...)
     if (is.null(colors))
-        return (commonslib_green_colors)
-    commonslib_green_colors[colors]
+        return (commonslib_colors)
+    commonslib_colors[colors]
 }
 
-#' Return a function which interpolates a commonslib_green color palette
+#' Return a function which interpolates a commonslib color palette
 #'
-#' @param palette Name of palette in \code{commonslib_green_palettes}.
+#' @param palette Name of palette in \code{commonslib_palettes}.
 #' @param reverse Boolean to indicate whether the palette should be reversed.
 #' @param ... Additional arguments to pass to \code{colorRampPalette}.
 #' @export
 
-get_commonslib_green_palette <- function(
+get_commonslib_palette <- function(
     palette = "main",
     reverse = FALSE, ...) {
 
-    commonslib_green_palettes <- list(
-        main  = get_commonslib_green_colors(
+    commonslib_palettes <- list(
+        main  = get_commonslib_colors(
             "green_1",
             "green_2",
             "green_3",
@@ -33,64 +33,64 @@ get_commonslib_green_palette <- function(
             "blue",
             "lilac",
             "purple"),
-        green = get_commonslib_green_colors(
+        green = get_commonslib_colors(
             "green_1",
             "green_2",
             "green_3",
             "green_4"),
-        twotone = get_commonslib_green_colors(
+        twotone = get_commonslib_colors(
             "green_2",
             "green_3")
     )
 
-    p <- commonslib_green_palettes[[palette]]
+    p <- commonslib_palettes[[palette]]
     if (reverse) p <- rev(p)
     grDevices::colorRampPalette(p, ...)
 }
 
-#' Color scale for commonslib_green colors
+#' Color scale for commonslib colors
 #'
-#' @param palette Name of palette in \code{commonslib_green_palettes}.
+#' @param palette Name of palette in \code{commonslib_palettes}.
 #' @param discrete Boolean to indicate if color aesthetic is discrete.
 #' @param reverse Boolean to indicate whether palette should be reversed.
 #' @param ... Additional arguments passed to \code{discrete_scale} or
 #'   \code{scale_color_gradientn}, depending on the value of \code{discrete}.
 #' @export
 
-scale_color_commonslib_green <- function(
+scale_color_commonslib <- function(
     palette = "main",
     discrete = TRUE,
     reverse = FALSE, ...) {
 
-    p <- get_commonslib_green_palette(palette = palette, reverse = reverse)
+    p <- get_commonslib_palette(palette = palette, reverse = reverse)
 
     if (discrete) {
         ggplot2::discrete_scale(
-            "color", paste0("commonslib_green_", palette), palette = p, ...)
+            "color", paste0("commonslib_", palette), palette = p, ...)
     } else {
         ggplot2::scale_color_gradientn(colors = p(256), ...)
     }
 }
 
-#' Fill scale for commonslib_green colors
+#' Fill scale for commonslib colors
 #'
-#' @param palette Name of palette in \code{commonslib_green_palettes}.
+#' @param palette Name of palette in \code{commonslib_palettes}.
 #' @param discrete Boolean to indicate if color aesthetic is discrete.
 #' @param reverse Boolean to indicate whether palette should be reversed.
 #' @param ... Additional arguments passed to \code{discrete_scale} or
 #'   \code{scale_color_gradientn}, depending on the value of \code{discrete}.
 #' @export
 
-scale_fill_commonslib_green <- function(
+scale_fill_commonslib <- function(
     palette = "main",
     discrete = TRUE,
     reverse = FALSE, ...) {
 
-    p <- get_commonslib_green_palette(palette = palette, reverse = reverse)
+    p <- get_commonslib_palette(palette = palette, reverse = reverse)
 
     if (discrete) {
         ggplot2::discrete_scale(
-            "fill", paste0("commonslib_green_", palette), palette = p, ...)
+            "fill", paste0("commonslib_", palette), palette = p, ...)
     } else {
         ggplot2::scale_fill_gradientn(colors = p(256), ...)
     }
