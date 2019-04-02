@@ -132,7 +132,7 @@ example_scatter_cons_type <- function() {
 example_bar_cons_type <- function() {
 
     types <- c("London", "Other city", "Large town",
-        "Medium town", "Small town", "Village")
+               "Medium town", "Small town", "Village")
     cs <- suppressMessages(readr::read_csv(DATASET_CON_FILE))
     cs <- cs %>% dplyr::filter(! is.na(classification))
     cs$type <- factor(cs$classification, levels = types, ordered = FALSE)
@@ -149,6 +149,8 @@ example_bar_cons_type <- function() {
             expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
         theme_commonslib(axes = "b", grid = "h") +
+        # ggplot2::theme(
+        #     axis.text.x = ggplot2::element_text(family = "Courier")) +
         scale_fill_commonslib(palette = "green", guide = "none")
 }
 

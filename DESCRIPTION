@@ -1,7 +1,7 @@
 Package: clplot
 Type: Package
 Title: Plotting tools for the House of Commons Library
-Version: 0.1.6
+Version: 0.1.7
 Author: Oliver Hawkins
 Maintainer: Oliver Hawkins <oli@olihawkins.com>
 Description: The clplot package provides themes and tools for making plots in 
@@ -11,7 +11,6 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     ggplot2,
-    ggthemes,
     magrittr,
     purrr,
     rlang,

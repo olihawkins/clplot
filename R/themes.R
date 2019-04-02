@@ -30,10 +30,7 @@ theme_commonslib <- function (
 
     # Baseline theme
 
-    theme_commonslib <- ggthemes::theme_foundation(
-        base_size = 10,
-        base_family = family) %+replace%
-        ggplot2::theme(
+    theme_commonslib <- ggplot2::theme(
             plot.background = ggplot2::element_rect(
                 fill = background,
                 size = 0),
@@ -43,6 +40,7 @@ theme_commonslib <- function (
                 b = 20,
                 l = 20, unit = "pt"),
             plot.title = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 face = "bold",
                 hjust = 0,
@@ -53,6 +51,7 @@ theme_commonslib <- function (
                     b = 5,
                     l = 0, unit = "pt")),
             plot.subtitle = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 face = "plain",
                 hjust = 0,
@@ -63,6 +62,7 @@ theme_commonslib <- function (
                     b = 20,
                     l = 0, unit = "pt")),
             plot.caption = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 hjust = 1,
                 size = 10,
@@ -75,13 +75,13 @@ theme_commonslib <- function (
             panel.background = ggplot2::element_blank(),
             panel.grid.major = ggplot2::element_blank(),
             panel.grid.minor = ggplot2::element_blank(),
-            axis.line = ggplot2::element_line(),
             axis.line.x.top = ggplot2::element_blank(),
             axis.line.y.right = ggplot2::element_blank(),
             axis.line.x.bottom = ggplot2::element_blank(),
             axis.line.y.left = ggplot2::element_blank(),
             axis.ticks = ggplot2::element_blank(),
             axis.title.x = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 size = 11,
                 margin = ggplot2::margin(
@@ -90,10 +90,12 @@ theme_commonslib <- function (
                     b = 0,
                     l = 0, unit = "pt")),
             axis.title.x.top = ggplot2::element_text(
+                family = family,
                 margin = ggplot2::margin(
                     t = 0,
                     b = 10, unit = "pt")),
             axis.title.y = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 size = 11,
                 angle = 90,
@@ -103,46 +105,53 @@ theme_commonslib <- function (
                     b = 0,
                     l = 0, unit = "pt")),
             axis.title.y.right = ggplot2::element_text(
+                family = family,
                 margin = ggplot2::margin(
                     r = 0,
                     l = 10, unit = "pt")),
             axis.text = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 size = 10),
             axis.text.x = ggplot2::element_text(
                 margin = ggplot2::margin(
-                    t = 3,
+                    t = 5,
                     r = 0,
                     b = 0,
                     l = 0, unit = "pt")),
             axis.text.x.top = ggplot2::element_text(
+                family = family,
                 margin = ggplot2::margin(
                     t = 0,
-                    b = 3, unit = "pt")),
+                    b = 5, unit = "pt")),
             axis.text.y = ggplot2::element_text(
+                family = family,
                 hjust = 1,
                 margin = ggplot2::margin(
                     t = 0,
-                    r = 3,
+                    r = 5,
                     b = 0,
                     l = 0, unit = "pt")),
             axis.text.y.right = ggplot2::element_text(
+                family = family,
                 hjust = 0,
                 margin = ggplot2::margin(
                     r = 0,
-                    l = 3, unit = "pt")),
+                    l = 5, unit = "pt")),
             legend.background = ggplot2::element_rect(
-                color = NA,
+                color = NULL,
                 fill = background,
                 size = 0),
             legend.key = ggplot2::element_rect(
                 color = background,
                 fill = background),
             legend.title = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 face = "bold",
                 size = 10),
             legend.text = ggplot2::element_text(
+                family = family,
                 color = "#303030",
                 size = 10)
         )
@@ -157,7 +166,10 @@ theme_commonslib <- function (
 
     # Axes
 
-    axis_line <- ggplot2::element_line(color = "#303030", size = 0.3)
+    axis_line <- ggplot2::element_line(
+        color = "#303030",
+        size = 0.3,
+        linetype = "solid")
 
     if (stringr::str_detect(axes, "t")) {
         theme_commonslib <- theme_commonslib %+replace%
@@ -189,7 +201,10 @@ theme_commonslib <- function (
 
     # Grid
 
-    grid_line <- ggplot2::element_line(color = "#c0c0c0",size = 0.2)
+    grid_line <- ggplot2::element_line(
+        color = "#c0c0c0",
+        size = 0.2,
+        linetype = "solid")
 
     if (stringr::str_detect(grid, "v")) {
         theme_commonslib <- theme_commonslib %+replace%
