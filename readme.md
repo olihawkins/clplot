@@ -43,8 +43,6 @@ The base color names are:
 * __purple__
 * __orange__
 
----
-
 ## Theme
 
 Set the theme for the session with:
