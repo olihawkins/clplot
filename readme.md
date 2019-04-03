@@ -55,6 +55,23 @@ Sets the theme with the following arguments:
 
 ---
 
+## Colors
+
+The base colors that are used by the theme are available in a named vector called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
+
+The base color names are:
+
+* __green_1__
+* __green_2__
+* __green_3__
+* __green_4__
+* __blue__
+* __lilac__
+* __purple__
+* __orange__
+
+---
+
 ## Scale
 
 Use `scale_color_commonslib()` or `scale_fill_commonslib()` as approriate. Both functions have the same signature.
@@ -73,22 +90,5 @@ Sets the scales with the following arguments:
 * __discrete__ Boolean to indicate if color aesthetic is discrete.
 * __reverse__ Boolean to indicate whether palette should be reversed.
 * __...__ Additional arguments passed to `discrete_scale` or `scale_color_gradientn`, depending on the value of `discrete`.
-
----
-
-## Colors
-
-The base colors that are used by the theme are available in a named vector called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
-
-The base color names are:
-
-* __green_1__
-* __green_2__
-* __green_3__
-* __green_4__
-* __blue__
-* __lilac__
-* __purple__
-* __orange__
 
 ---
