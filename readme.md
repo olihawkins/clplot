@@ -78,8 +78,7 @@ Sets the scales with the following arguments:
 
 ## Colors
 
-The base colors that are used by the theme are available in a named vector
-called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
+The base colors that are used by the theme are available in a named vector called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
 
 The base color names are:
 
