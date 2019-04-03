@@ -28,6 +28,23 @@ install.packages("devtools")
 devtools::install_github("olihawkins/clplot")
 ```
 
+## Colors
+
+The base colors that are used by the theme are available in a named vector called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
+
+The base color names are:
+
+* __green_1__
+* __green_2__
+* __green_3__
+* __green_4__
+* __blue__
+* __lilac__
+* __purple__
+* __orange__
+
+---
+
 ## Theme
 
 Set the theme for the session with:
@@ -52,23 +69,6 @@ Sets the theme with the following arguments:
 * __subtitle__ Boolean to indicate whether the plot has a subtitle. This argument controls the spacing after the title, so that it is smaller when a subtitle is present. The default is TRUE.
 * __axes__ A string to indicate which axes should have axis lines and ticks. Designate the axes to show by including a particular character in the string: "t" for top, "r" for right, "b" for bottom, "l" for left. You will need to position the axes correctly with ggplot, and turn on any secondary axes, in order for the specified axes lines and ticks to be displayed. The default is "bl", meaning both axes are shown by default.
 * __grid__ A string to indicate which gridlines should be shown. Designate which gridlines to show by including a particular character in the string: "h" for horizontal, "v" for vertical. The default is an empty string, meaning no gridlines are shown by default.
-
----
-
-## Colors
-
-The base colors that are used by the theme are available in a named vector called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
-
-The base color names are:
-
-* __green_1__
-* __green_2__
-* __green_3__
-* __green_4__
-* __blue__
-* __lilac__
-* __purple__
-* __orange__
 
 ---
 
