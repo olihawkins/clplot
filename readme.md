@@ -4,7 +4,20 @@ clplot is a ggplot2 theme for the House of Commons Library. It is currently in d
 
 ## Fonts
 
-This theme requires Open Sans as the theme font.
+This theme uses Open Sans as the default font, but an alternative font can be specified in the call to `theme_commonslib`.
+
+On Windows, the system wide fonts may not be avilable in R by default. If this is the case, you can make them available with the extrafont package in the following way.
+
+```r
+install.packages("extrafont")
+library(extrafont)
+font_import()
+loadfonts(device = "win")
+```
+
+You will only need to do the above step once. After that, loading the extrafont package in your script with `library(extrafont)` is enough to make the fonts available.
+
+Note that on MacOS Open Sans is not installed on the system by default, but it is freely available to download and install. You don't need to use extrafont to use system fonts in R on a Mac.
 
 ## Installation
 
