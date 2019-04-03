@@ -70,7 +70,7 @@ Sets the theme with the following arguments:
 
 ---
 
-## Scale
+## Scales
 
 Use `scale_color_commonslib()` or `scale_fill_commonslib()` as approriate. Both functions have the same signature.
 
