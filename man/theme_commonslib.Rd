@@ -8,7 +8,7 @@ theme_commonslib(background = "#edf7f2", family = "Open Sans",
   subtitle = TRUE, axes = "bl", grid = "")
 }
 \arguments{
-\item{background}{A hexidecimal color code for the canvas color. The default
+\item{background}{A hexadecimal color code for the canvas color. The default
 is "#edf7f2".}
 
 \item{family}{The font family name to use for the chart as a string. The

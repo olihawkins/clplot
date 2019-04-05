@@ -62,7 +62,7 @@ _clplot_::__theme_commonslib__(_background = "#edf7f2"_, _family = "Open Sans"_,
 
 Sets the theme with the following arguments:
 
-* __background__  A hexidecimal color code for the canvas color. The default is "#edf7f2".
+* __background__  A hexadecimal color code for the canvas color. The default is "#edf7f2".
 * __family__ The font family name to use for the chart as a string. The default is "Open Sans".
 * __subtitle__ Boolean to indicate whether the plot has a subtitle. This argument controls the spacing after the title, so that it is smaller when a subtitle is present. The default is TRUE.
 * __axes__ A string to indicate which axes should have axis lines and ticks. Designate the axes to show by including a particular character in the string: "t" for top, "r" for right, "b" for bottom, "l" for left. You will need to position the axes correctly with ggplot, and turn on any secondary axes, in order for the specified axes lines and ticks to be displayed. The default is "bl", meaning both axes are shown by default.

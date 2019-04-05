@@ -1,7 +1,7 @@
 ### Themes
 
 #' Commons Library theme
-#' @param background A hexidecimal color code for the canvas color. The default
+#' @param background A hexadecimal color code for the canvas color. The default
 #'   is "#edf7f2".
 #' @param family The font family name to use for the chart as a string. The
 #'   default is "Open Sans".
