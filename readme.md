@@ -58,7 +58,7 @@ Or apply the theme directly to a specific plot with `+ theme_commonslib()`.
 
 ---
 
-_clplot_::__theme_commonslib__(_background = "#edf7f2"_, _family = "Open Sans"_, _subtitle = TRUE_, _axes = "b"_, _grid = "h"_)
+_clplot_::__theme_commonslib__(_background = "#edf7f2"_, _family = "Open Sans"_, _subtitle = TRUE_, _axes = "bl"_, _grid = ""_)
 
 Sets the theme with the following arguments:
 
