@@ -14,6 +14,7 @@ GALLERY_DIR <- "gallery"
 GALLERY_TEST_FILE <- file.path(GALLERY_DIR, "test.svg")
 GALLERY_SCATTER_MPG_NAME <- file.path("scatter-mpg")
 GALLERY_SCATTER_CONS_TYPE_NAME <- file.path("scatter-cons-type")
+GALLERY_SCATTER_CONS_FACET_NAME <- file.path("scatter-cons-facet")
 GALLERY_BAR_CONS_TYPE_NAME <- file.path("bar-cons-type")
 GALLERY_BAR_CONS_REGION_NAME <- file.path("bar-cons-region")
 GALLERY_LINE_STOCKS_NAME <- file.path("line-stocks")
@@ -36,6 +37,7 @@ build_gallery <- function() {
     examples <- list()
     examples[[GALLERY_SCATTER_MPG_NAME]] = example_scatter_mpg
     examples[[GALLERY_SCATTER_CONS_TYPE_NAME]] = example_scatter_cons_type
+    examples[[GALLERY_SCATTER_CONS_FACET_NAME]] = example_scatter_cons_facet
     examples[[GALLERY_BAR_CONS_TYPE_NAME]] = example_bar_cons_type
     examples[[GALLERY_BAR_CONS_REGION_NAME]] = example_bar_cons_region
     examples[[GALLERY_LINE_STOCKS_NAME]] = example_line_stocks
@@ -91,12 +93,12 @@ example_scatter_mpg <- function() {
             y = "Highway mileage (mpg)",
             title = "Bigger engines are more fuel efficient",
             subtitle = "Highway mileage by engine displacement",
-            caption = "@commonslib",
+            caption = "@commonslibrary",
             colour = "Vehicle type") +
         ggplot2::xlim(0, 8) +
         ggplot2::ylim(10, 50) +
         ggplot2::coord_cartesian(expand = FALSE) +
-        theme_commonslib(grid = "hv") +
+        theme_commonslib(axes = "", grid = "hv") +
         scale_color_commonslib()
 }
 
@@ -118,15 +120,45 @@ example_scatter_cons_type <- function() {
             title = "Turnout was higher in older, less urban constituencies",
             subtitle = "Constituencies by age, turnout and settlement class, 2017",
             color = "Settlement class",
-            caption = "@commonslib") +
+            caption = "@commonslibrary") +
         ggplot2::scale_x_continuous(
             limits = c(25, 55)) +
         ggplot2::scale_y_continuous(
             limits = c(0.5, 0.8),
             label = scales::percent_format(accuracy = 1)) +
         ggplot2::coord_cartesian(expand = FALSE) +
-        theme_commonslib(grid = "hv") +
+        theme_commonslib() +
         scale_color_commonslib()
+}
+
+example_scatter_cons_facet <- function() {
+
+    types <- c("London", "Other city", "Large town",
+               "Medium town", "Small town", "Village")
+    cs <- suppressMessages(readr::read_csv(DATASET_CON_FILE))
+    cs <- cs %>% dplyr::filter(! is.na(classification))
+    cs$type <- factor(cs$classification, levels = types)
+
+    p <- ggplot2::ggplot(cs, ggplot2::aes(
+            median_age, turnout, color = type)) +
+        ggplot2::geom_point() +
+        ggplot2::facet_wrap(~ type) +
+        ggplot2::labs(
+            x = "Median age",
+            y = "Turnout",
+            title = "Turnout was higher in older, less urban constituencies",
+            subtitle = "Constituencies by age, turnout and settlement class, 2017",
+            color = "Settlement class",
+            caption = "@commonslibrary") +
+        ggplot2::scale_x_continuous(
+            limits = c(25, 55)) +
+        ggplot2::scale_y_continuous(
+            limits = c(0.5, 0.85),
+            label = scales::percent_format(accuracy = 1)) +
+        ggplot2::coord_cartesian(expand = FALSE) +
+        theme_commonslib(axes = "", grid = "hv") +
+        scale_color_commonslib() +
+        ggplot2::theme(legend.position ="None")
 }
 
 example_bar_cons_type <- function() {
@@ -144,13 +176,11 @@ example_bar_cons_type <- function() {
             y= "Number of constituencies",
             title = "Around half of constituencies are towns",
             subtitle = "Constituencies by settlement class, Great Britain",
-            caption = "@commonslib") +
+            caption = "@commonslibrary") +
         ggplot2::scale_x_discrete(
             expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
         theme_commonslib(axes = "b", grid = "h") +
-        # ggplot2::theme(
-        #     axis.text.x = ggplot2::element_text(family = "Courier")) +
         scale_fill_commonslib(palette = "green", guide = "none")
 }
 
@@ -167,7 +197,7 @@ example_bar_cons_region <- function() {
             y = "Number of constituencies",
             title = "Countries and regions vary in representation",
             subtitle = "Constituencies by country or region, United Kingdom",
-            caption = "@commonslib") +
+            caption = "@commonslibrary") +
         ggplot2::scale_x_discrete(
             expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
@@ -193,7 +223,7 @@ example_line_stocks <- function() {
             title = "Amazon has done pretty well lately",
             subtitle = "Change in the value of tech stocks during the last decade (baseline = 100)",
             color = NULL,
-            caption = "@commonslib") +
+            caption = "@commonslibrary") +
         ggplot2::scale_y_continuous(
             label = scales::comma,
             limits = c(0, 2700)) +

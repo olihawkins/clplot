@@ -29,7 +29,6 @@ theme_commonslib <- function (
     grid = "") {
 
     # Baseline theme
-
     theme_commonslib <- ggplot2::theme(
             plot.background = ggplot2::element_rect(
                 fill = background,
@@ -71,33 +70,33 @@ theme_commonslib <- function (
                     r = 0,
                     b = 0,
                     l = 0, unit = "pt")),
+            panel.spacing = ggplot2::unit(20, "pt"),
             panel.border = ggplot2::element_blank(),
             panel.background = ggplot2::element_blank(),
+            panel.grid = ggplot2::element_blank(),
             panel.grid.major = ggplot2::element_blank(),
             panel.grid.minor = ggplot2::element_blank(),
+            axis.line = ggplot2::element_blank(),
             axis.line.x.top = ggplot2::element_blank(),
             axis.line.y.right = ggplot2::element_blank(),
             axis.line.x.bottom = ggplot2::element_blank(),
             axis.line.y.left = ggplot2::element_blank(),
             axis.ticks = ggplot2::element_blank(),
-            axis.title.x = ggplot2::element_text(
+            axis.title = ggplot2::element_text(
                 family = family,
                 color = "#303030",
-                size = 11,
+                size = 11),
+            axis.title.x = ggplot2::element_text(
                 margin = ggplot2::margin(
                     t = 10,
                     r = 0,
                     b = 0,
                     l = 0, unit = "pt")),
             axis.title.x.top = ggplot2::element_text(
-                family = family,
                 margin = ggplot2::margin(
                     t = 0,
                     b = 10, unit = "pt")),
             axis.title.y = ggplot2::element_text(
-                family = family,
-                color = "#303030",
-                size = 11,
                 angle = 90,
                 margin = ggplot2::margin(
                     t = 0,
@@ -105,7 +104,7 @@ theme_commonslib <- function (
                     b = 0,
                     l = 0, unit = "pt")),
             axis.title.y.right = ggplot2::element_text(
-                family = family,
+                angle = 90,
                 margin = ggplot2::margin(
                     r = 0,
                     l = 10, unit = "pt")),
@@ -120,12 +119,10 @@ theme_commonslib <- function (
                     b = 0,
                     l = 0, unit = "pt")),
             axis.text.x.top = ggplot2::element_text(
-                family = family,
                 margin = ggplot2::margin(
                     t = 0,
                     b = 5, unit = "pt")),
             axis.text.y = ggplot2::element_text(
-                family = family,
                 hjust = 1,
                 margin = ggplot2::margin(
                     t = 0,
@@ -133,7 +130,6 @@ theme_commonslib <- function (
                     b = 0,
                     l = 0, unit = "pt")),
             axis.text.y.right = ggplot2::element_text(
-                family = family,
                 hjust = 0,
                 margin = ggplot2::margin(
                     r = 0,
@@ -153,11 +149,18 @@ theme_commonslib <- function (
             legend.text = ggplot2::element_text(
                 family = family,
                 color = "#303030",
-                size = 10)
+                size = 10),
+            strip.background = ggplot2::element_rect(
+                color = background,
+                fill = background),
+            strip.text = ggplot2::element_text(
+                family = family,
+                color = "#303030",
+                size = 10,
+                face = "bold",)
         )
 
     # Subtitle
-
     if (! subtitle) {
         theme_commonslib <- theme_commonslib + ggplot2::theme(
             plot.title = ggplot2::element_text(
@@ -165,7 +168,6 @@ theme_commonslib <- function (
     }
 
     # Axes
-
     axis_line <- ggplot2::element_line(
         color = "#303030",
         size = 0.3,
@@ -200,7 +202,6 @@ theme_commonslib <- function (
     }
 
     # Grid
-
     grid_line <- ggplot2::element_line(
         color = "#c0c0c0",
         size = 0.2,
