@@ -12,3 +12,11 @@ commonslib_colors <- c(
     "lilac"   = "#a474c7",
     "purple"  = "#633684",
     "orange"  = "#d25f15")
+
+#' Get the hex code for a commons library color
+#' @param color_name The name of the color.
+#' @export
+
+commonslib_color <- function (color_name) {
+    unname(commonslib_colors[color_name])
+}

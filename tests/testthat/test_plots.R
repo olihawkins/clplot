@@ -5,7 +5,7 @@ context("Plotting functions")
 
 source("gallery.R")
 
-# Setup -----------------------------------------------------------------------
+# Tests -----------------------------------------------------------------------
 
 test_that("theme and scales render example_scatter_mpg correctly", {
     expect_true(compare_examples(

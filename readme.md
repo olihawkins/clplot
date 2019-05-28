@@ -30,7 +30,7 @@ devtools::install_github("olihawkins/clplot")
 
 ## Colors
 
-The base colors that are used by the theme are available in a named vector called `commonslib_colors`. You can use these with `scale_manual()` in ggplot2 to map specific colors to categorical variables.
+The base colors that are used by the theme are available in a named vector called `commonslib_colors`.
 
 The base color names are:
 
@@ -42,6 +42,16 @@ The base color names are:
 * __lilac__
 * __purple__
 * __orange__
+
+You can use the `commonslib_color` function to return the unnamed hex code value for a given name. This makes it easy to map specific colors to categorical variables using the `scale_color_manual()` and `scale_fill_manual()` functions.
+
+```r
+scale_color_manual(values = c(
+    "a" = commonslib_color("green_1"),
+    "b" = commonslib_color("green_3"))
+```
+
+These colors are also avaialable as ggplot2 scales with a range of palettes representing different subsets of the colors (see below).
 
 ## Theme
 
