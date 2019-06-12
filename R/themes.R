@@ -66,7 +66,7 @@ theme_commonslib <- function (
                 hjust = 1,
                 size = 10,
                 margin = ggplot2::margin(
-                    t = 10,
+                    t = 12,
                     r = 0,
                     b = 0,
                     l = 0, unit = "pt")),
@@ -88,26 +88,26 @@ theme_commonslib <- function (
                 size = 11),
             axis.title.x = ggplot2::element_text(
                 margin = ggplot2::margin(
-                    t = 10,
+                    t = 12,
                     r = 0,
                     b = 0,
                     l = 0, unit = "pt")),
             axis.title.x.top = ggplot2::element_text(
                 margin = ggplot2::margin(
                     t = 0,
-                    b = 10, unit = "pt")),
+                    b = 12, unit = "pt")),
             axis.title.y = ggplot2::element_text(
                 angle = 90,
                 margin = ggplot2::margin(
                     t = 0,
-                    r = 10,
+                    r = 12,
                     b = 0,
                     l = 0, unit = "pt")),
             axis.title.y.right = ggplot2::element_text(
                 angle = 90,
                 margin = ggplot2::margin(
                     r = 0,
-                    l = 10, unit = "pt")),
+                    l = 12, unit = "pt")),
             axis.text = ggplot2::element_text(
                 family = family,
                 color = "#303030",
