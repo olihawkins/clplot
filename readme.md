@@ -48,7 +48,7 @@ You can use the `commonslib_color` function to return the unnamed hex code value
 ```r
 scale_color_manual(values = c(
     "a" = commonslib_color("green_1"),
-    "b" = commonslib_color("green_3"))
+    "b" = commonslib_color("green_3")))
 ```
 
 These colors are also avaialable as ggplot2 scales with a range of palettes representing different subsets of the colors (see below).
