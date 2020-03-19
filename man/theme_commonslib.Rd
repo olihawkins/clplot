@@ -4,8 +4,13 @@
 \alias{theme_commonslib}
 \title{Commons Library theme}
 \usage{
-theme_commonslib(background = "#edf7f2", family = "Open Sans",
-  subtitle = TRUE, axes = "bl", grid = "")
+theme_commonslib(
+  background = "#edf7f2",
+  family = "Open Sans",
+  subtitle = TRUE,
+  axes = "bl",
+  grid = ""
+)
 }
 \arguments{
 \item{background}{A hexadecimal color code for the canvas color. The default

@@ -4,8 +4,7 @@
 \alias{scale_fill_commonslib}
 \title{Fill scale for commonslib colors}
 \usage{
-scale_fill_commonslib(palette = "main", discrete = TRUE,
-  reverse = FALSE, ...)
+scale_fill_commonslib(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Name of palette in \code{commonslib_palettes}.}

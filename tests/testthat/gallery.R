@@ -158,7 +158,7 @@ example_scatter_cons_facet <- function() {
         ggplot2::coord_cartesian(expand = FALSE) +
         theme_commonslib(axes = "", grid = "hv") +
         scale_color_commonslib() +
-        ggplot2::theme(legend.position ="None")
+        ggplot2::theme(legend.position = "None")
 }
 
 example_bar_cons_type <- function() {
@@ -178,7 +178,7 @@ example_bar_cons_type <- function() {
             subtitle = "Constituencies by settlement class, Great Britain",
             caption = "@commonslibrary") +
         ggplot2::scale_x_discrete(
-            expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
+            expand = ggplot2::expansion(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
         theme_commonslib(axes = "b", grid = "h") +
         scale_fill_commonslib(palette = "green", guide = "none")
@@ -199,7 +199,7 @@ example_bar_cons_region <- function() {
             subtitle = "Constituencies by country or region, United Kingdom",
             caption = "@commonslibrary") +
         ggplot2::scale_x_discrete(
-            expand = ggplot2::expand_scale(add = c(0.5, 0.5))) +
+            expand = ggplot2::expansion(add = c(0.5, 0.5))) +
         ggplot2::scale_y_continuous(expand = c(0,0)) +
         theme_commonslib(axes = "b", grid = "h") +
         scale_fill_commonslib(guide = "none")

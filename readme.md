@@ -21,11 +21,11 @@ Note that on MacOS Open Sans is not installed on the system by default, but it i
 
 ## Installation
 
-Install from GitHub using devtools.
+Install from GitHub using remotes.
 
 ``` r
-install.packages("devtools")
-devtools::install_github("olihawkins/clplot")
+install.packages("remotes")
+remotes::install_github("olihawkins/clplot")
 ```
 
 ## Colors

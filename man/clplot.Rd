@@ -3,7 +3,6 @@
 \docType{package}
 \name{clplot}
 \alias{clplot}
-\alias{clplot-package}
 \title{clplot: Plotting tools for the House of Commons Library}
 \description{
 The clplot package provides themes and tools for making plots in the House
